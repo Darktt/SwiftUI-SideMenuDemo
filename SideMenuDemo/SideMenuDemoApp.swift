@@ -8,9 +8,12 @@
 import SwiftUI
 
 @main
-struct SideMenuDemoApp: App {
+struct SideMenuDemoApp: App
+{
     var body: some Scene {
+        
         WindowGroup {
+            
             ContentView()
         }
     }
