@@ -26,7 +26,7 @@ public struct SideMenuView: View
             LinearGradient(gradient: Gradient(colors: self.gradientColors), startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
-            VStack {
+            VStack(alignment: .leading) {
                 
                 SideMenuHeaderView(isShowing: self._isShowing)
                     .frame(height: 240.0)
@@ -58,11 +58,11 @@ struct SideMenuView_Previews: PreviewProvider
     
     static var previews: some View {
         
-        SideMenuView(isShowing: self.$isShowing)
+        SideMenuView(isShowing: .constant(false))
             .preferredColorScheme(.light)
             
         
-        SideMenuView(isShowing: self.$isShowing)
+        SideMenuView(isShowing: .constant(false))
             .preferredColorScheme(.dark)
     }
 }

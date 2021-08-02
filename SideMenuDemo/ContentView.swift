@@ -44,11 +44,12 @@ public struct ContentView: View
                 }
                 
                 HomeView()
-//                    .cornerRadius(self.cornerRadius)
+                    .cornerRadius(self.cornerRadius)
                     .offset(x: self.xOffset, y: self.yOffset)
-//                    .scaleEffect(self.scaleEffect)
+                    .scaleEffect(self.scaleEffect)
                     .navigationTitle("Home")
                     .toolbar(content: self.toolbarContent)
+                    .ignoresSafeArea()
             }
         }
     }

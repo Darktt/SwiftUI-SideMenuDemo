@@ -19,7 +19,6 @@ public struct HomeView: View
                 .foregroundColor(.sharkText)
                 .padding()
         }
-        .ignoresSafeArea()
     }
 }
 

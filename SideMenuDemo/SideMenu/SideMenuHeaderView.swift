@@ -48,7 +48,7 @@ public struct SideMenuHeaderView: View
                     
                     HStack(spacing: 4.0) {
                         
-                        Text("1,094,016").bold()
+                        Text("1.0M").bold()
                         Text("Followers")
                     }
                     
@@ -108,5 +108,6 @@ struct SideMenuHeaderView_Previews: PreviewProvider
     static var previews: some View {
         
         SideMenuHeaderView(isShowing: self.$isShowing)
+            .previewDevice("iPhone SE (2nd generation)")
     }
 }

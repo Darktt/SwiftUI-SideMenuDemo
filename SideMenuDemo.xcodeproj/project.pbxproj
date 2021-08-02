@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */; };
 		F288386126B390DD001EAEE3 /* SideMenuDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */; };
 		F288386326B390DD001EAEE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288386226B390DD001EAEE3 /* ContentView.swift */; };
 		F288386526B390DE001EAEE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F288386426B390DE001EAEE3 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtenion.swift; sourceTree = "<group>"; };
 		F288385D26B390DD001EAEE3 /* SideMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDemoApp.swift; sourceTree = "<group>"; };
 		F288386226B390DD001EAEE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				F2E113B726B3AE2E009DAA38 /* Color.swift */,
+				F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F288387226B3914D001EAEE3 /* SideMenuView.swift in Sources */,
+				F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */,
 				F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */,
 				F288387526B39E55001EAEE3 /* SideMenuHeaderView.swift in Sources */,
 				F288386326B390DD001EAEE3 /* ContentView.swift in Sources */,
