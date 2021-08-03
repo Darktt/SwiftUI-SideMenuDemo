@@ -12,6 +12,14 @@ public struct ContentView: View
     @State
     private var isShowing: Bool = false
     
+    private var menuOptions: Array<MenuOption> = {
+        
+        let profile = MenuOption(imageName: "person", title: "Profile")
+        let setting = MenuOption(imageName: "gear", title: "Setting")
+        
+        return [profile, setting]
+    }()
+    
     private var cornerRadius: CGFloat {
         
         self.isShowing ? 20.0 : 0.0
@@ -40,7 +48,7 @@ public struct ContentView: View
                 
                 if self.isShowing {
                     
-                    SideMenuView(isShowing: self.$isShowing)
+                    SideMenuView(options: self.menuOptions, isShowing: self.$isShowing)
                 }
                 
                 HomeView()

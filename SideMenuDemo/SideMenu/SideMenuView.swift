@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-public struct SideMenuView: View
+public struct SideMenuView<Option>: View where Option: SideMenuOption
 {
     // MARK: - Properties -
     
     @Binding
     private var isShowing: Bool
+    
+    private var options: Array<Option>
     
     private var gradientColors: Array<Color> {
         
@@ -31,9 +33,11 @@ public struct SideMenuView: View
                 SideMenuHeaderView(isShowing: self._isShowing)
                     .frame(height: 240.0)
                 
-                ForEach(0 ..< 6) { _ in
+                ForEach(self.options) {
                     
-                    SideMenuOptionView()
+                    option in
+                    
+                    SideMenuOptionView(option: option)
                 }
                 
                 Spacer()
@@ -45,23 +49,36 @@ public struct SideMenuView: View
     // MARK: - Methods -
     // MARK: Initial Method
     
-    public init(isShowing: Binding<Bool>)
+    public init(options: Array<Option>, isShowing: Binding<Bool>)
     {
+        self.options = options
         self._isShowing = isShowing
     }
 }
 
 struct SideMenuView_Previews: PreviewProvider
 {
+    struct PreviewOption: SideMenuOption
+    {
+        var id: String = UUID().uuidString
+        
+        var imageName: String = "person"
+        
+        var title: String = "Profile"
+    }
+    
     @State
     static var isShowing: Bool = false
     
+    @State
+    static var options: Array<PreviewOption> = [PreviewOption()]
+    
     static var previews: some View {
         
-        SideMenuView(isShowing: .constant(false))
+        SideMenuView(options: self.options, isShowing: self.$isShowing)
             .preferredColorScheme(.light)
         
-        SideMenuView(isShowing: .constant(false))
+        SideMenuView(options: self.options, isShowing: self.$isShowing)
             .preferredColorScheme(.dark)
     }
 }
