@@ -60,7 +60,6 @@ struct SideMenuView_Previews: PreviewProvider
         
         SideMenuView(isShowing: .constant(false))
             .preferredColorScheme(.light)
-            
         
         SideMenuView(isShowing: .constant(false))
             .preferredColorScheme(.dark)

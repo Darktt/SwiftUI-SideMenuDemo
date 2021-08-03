@@ -13,32 +13,19 @@ public struct HomeView: View
         
         ZStack {
             
-            Color.sharkWhite
+            GeometryReader {
+                
+                Image("GawrGura")
+                    .frame(width: $0.size.width, height: $0.size.height)
+                    .clipped(antialiased: true)
+            }
+            .allowsHitTesting(false)
+            .ignoresSafeArea()
             
             Text("Hello, world!")
                 .foregroundColor(.sharkText)
                 .padding()
         }
-    }
-}
-
-private extension HomeView
-{
-    func toolbarContent() -> some ToolbarContent
-    {
-        ToolbarItem(placement: .navigationBarLeading) {
-            
-            Button(action: self.sideMenuAction, label: {
-                
-                Image(systemName: "list.bullet")
-            })
-            .foregroundColor(.red)
-        }
-    }
-    
-    func sideMenuAction()
-    {
-        
     }
 }
 

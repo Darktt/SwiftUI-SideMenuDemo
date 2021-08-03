@@ -22,7 +22,7 @@ public struct SideMenuHeaderView: View
             
             VStack(alignment: .leading) {
                 
-                Image("GawrGura")
+                Image("Profile")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 64.0, height: 64.0, alignment: .top)
@@ -93,7 +93,7 @@ private extension SideMenuHeaderView
     
     func closeAction()
     {
-        withAnimation(.spring()) {
+        withAnimation(.easeInOut(duration: 0.25)) {
             
             self.isShowing = false
         }

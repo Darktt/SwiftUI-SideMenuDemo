@@ -44,6 +44,7 @@ public struct ContentView: View
                 }
                 
                 HomeView()
+                    .blur(radius: self.isShowing ? 5.0 : 0.0)
                     .cornerRadius(self.cornerRadius)
                     .offset(x: self.xOffset, y: self.yOffset)
                     .scaleEffect(self.scaleEffect)
@@ -71,7 +72,7 @@ private extension ContentView
     
     func sideMenuAction()
     {
-        withAnimation(.spring()) {
+        withAnimation(.easeInOut(duration: 0.25)) {
             
             self.isShowing.toggle()
         }
