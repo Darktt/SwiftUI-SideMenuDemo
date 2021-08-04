@@ -108,6 +108,5 @@ struct SideMenuHeaderView_Previews: PreviewProvider
     static var previews: some View {
         
         SideMenuHeaderView(isShowing: self.$isShowing)
-            .previewDevice("iPhone SE (2nd generation)")
     }
 }
