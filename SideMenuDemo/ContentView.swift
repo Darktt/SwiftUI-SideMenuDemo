@@ -49,13 +49,20 @@ public struct ContentView: View
                         
                         option in
                         
-                        print("Selected: \(option.title)")
-                        
                         self.currentMenuOption = option
+                        
+                        withAnimation(.easeOut(duration: 0.25)) {
+                            
+                            self.isShowing.toggle()
+                        }
+                        
                     }.linearGradient(colors: [.sharkWhite, .sharkBlue], startPoint: .top, endPoint: .bottom, ignoreSafeArea: true)
                 }
                 
                 self.mainView()
+                    .showingMenu(self.isShowing)
+                    .toolbar(content: self.toolbarContent)
+                    .ignoresSafeArea()
             }
         }
     }
@@ -69,23 +76,13 @@ private extension ContentView
         if self.currentMenuOption == .profile {
             
             HomeView()
-                .blur(radius: self.isShowing ? 5.0 : 0.0)
-                .cornerRadius(self.cornerRadius)
-                .offset(x: self.xOffset, y: self.yOffset)
-                .scaleEffect(self.scaleEffect)
                 .navigationTitle("Home")
-                .toolbar(content: self.toolbarContent)
-                .ignoresSafeArea()
         }
         
         if self.currentMenuOption == .setting {
             
-            GeometryReader {
-                
-                Color.sharkText
-                    .frame(width: $0.size.width, height: $0.size.height)
-                    .ignoresSafeArea()
-            }
+            SettingView()
+                .navigationTitle("Setting")
         }
     }
     

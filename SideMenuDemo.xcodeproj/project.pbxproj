@@ -19,6 +19,8 @@
 		F288387526B39E55001EAEE3 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288387426B39E55001EAEE3 /* SideMenuHeaderView.swift */; };
 		F2E113B426B3AB9C009DAA38 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */; };
 		F2E113B826B3AE2E009DAA38 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E113B726B3AE2E009DAA38 /* Color.swift */; };
+		F2ED992E26BA7D6B00B0100A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED992D26BA7D6B00B0100A /* SettingView.swift */; };
+		F2ED993526BA85CB00B0100A /* SideMenuModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED993426BA85CB00B0100A /* SideMenuModifier.swift */; };
 		F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCC1D126B3CD890010E655 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		F288387426B39E55001EAEE3 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
 		F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		F2E113B726B3AE2E009DAA38 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		F2ED992D26BA7D6B00B0100A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F2ED993426BA85CB00B0100A /* SideMenuModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModifier.swift; sourceTree = "<group>"; };
 		F2FCC1D126B3CD890010E655 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +88,7 @@
 				F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */,
 				F288386226B390DD001EAEE3 /* ContentView.swift */,
 				F2FCC1D126B3CD890010E655 /* HomeView.swift */,
+				F2ED992D26BA7D6B00B0100A /* SettingView.swift */,
 				F288386426B390DE001EAEE3 /* Assets.xcassets */,
 				F288386926B390DE001EAEE3 /* Info.plist */,
 				F288386626B390DE001EAEE3 /* Preview Content */,
@@ -102,10 +107,9 @@
 		F288387026B390FC001EAEE3 /* SideMenu */ = {
 			isa = PBXGroup;
 			children = (
-				F24AB60926B90D0A0063F892 /* SideMenuOption.swift */,
-				F288387126B3914D001EAEE3 /* SideMenuView.swift */,
-				F288387426B39E55001EAEE3 /* SideMenuHeaderView.swift */,
-				F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */,
+				F2ED993326BA854D00B0100A /* Modifier */,
+				F2ED993126BA853200B0100A /* Protocol */,
+				F2ED993226BA854000B0100A /* View */,
 			);
 			path = SideMenu;
 			sourceTree = "<group>";
@@ -118,6 +122,32 @@
 				F250C44A26BA6980009FF5F9 /* ViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F2ED993126BA853200B0100A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				F24AB60926B90D0A0063F892 /* SideMenuOption.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		F2ED993226BA854000B0100A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F288387126B3914D001EAEE3 /* SideMenuView.swift */,
+				F288387426B39E55001EAEE3 /* SideMenuHeaderView.swift */,
+				F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2ED993326BA854D00B0100A /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				F2ED993426BA85CB00B0100A /* SideMenuModifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F288387226B3914D001EAEE3 /* SideMenuView.swift in Sources */,
+				F2ED993526BA85CB00B0100A /* SideMenuModifier.swift in Sources */,
 				F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */,
 				F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */,
 				F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */,
@@ -198,6 +229,7 @@
 				F250C44B26BA6980009FF5F9 /* ViewExtension.swift in Sources */,
 				F24AB60A26B90D0A0063F892 /* SideMenuOption.swift in Sources */,
 				F2E113B426B3AB9C009DAA38 /* SideMenuOptionView.swift in Sources */,
+				F2ED992E26BA7D6B00B0100A /* SettingView.swift in Sources */,
 				F288386126B390DD001EAEE3 /* SideMenuDemoApp.swift in Sources */,
 				F2E113B826B3AE2E009DAA38 /* Color.swift in Sources */,
 			);
