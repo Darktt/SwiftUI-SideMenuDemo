@@ -18,15 +18,9 @@ public struct SideMenuView<Option>: View where Option: SideMenuOption
     
     private var onSelection: OnSelectionHandler
     
-    @State
-    private var gradientColors: Array<Color> = [Color.sharkWhite, Color.sharkBlue]
-    
     public var body: some View {
         
         ZStack {
-            
-            LinearGradient(gradient: Gradient(colors: self.gradientColors), startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
             
             VStack(alignment: .leading) {
                 
@@ -54,11 +48,6 @@ public struct SideMenuView<Option>: View where Option: SideMenuOption
         self.options = options
         self._isShowing = isShowing
         self.onSelection = onSelection
-    }
-    
-    public func gradient(_ gradientColors: Array<Color>)
-    {
-        self.gradientColors = gradientColors
     }
 }
 

@@ -52,7 +52,7 @@ public struct ContentView: View
                         print("Selected: \(option.title)")
                         
                         self.currentMenuOption = option
-                    }
+                    }.linearGradient(colors: [.sharkWhite, .sharkBlue], startPoint: .top, endPoint: .bottom, ignoreSafeArea: true)
                 }
                 
                 self.mainView()
