@@ -49,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F250C44926BA4766009FF5F9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F24AB60B26B9153B0063F892 /* MenuOption.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F288385426B390DD001EAEE3 = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +78,7 @@
 			children = (
 				F2E113B626B3AE17009DAA38 /* Extensions */,
 				F288387026B390FC001EAEE3 /* SideMenu */,
-				F24AB60B26B9153B0063F892 /* MenuOption.swift */,
+				F250C44926BA4766009FF5F9 /* Model */,
 				F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */,
 				F288386226B390DD001EAEE3 /* ContentView.swift */,
 				F2FCC1D126B3CD890010E655 /* HomeView.swift */,

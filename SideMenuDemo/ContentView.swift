@@ -12,13 +12,10 @@ public struct ContentView: View
     @State
     private var isShowing: Bool = false
     
-    private var menuOptions: Array<MenuOption> = {
-        
-        let profile = MenuOption(imageName: "person", title: "Profile")
-        let setting = MenuOption(imageName: "gear", title: "Setting")
-        
-        return [profile, setting]
-    }()
+    private var menuOptions: Array<MenuOption> = MenuOption.all
+    
+    @State
+    private var currentMenuOption: MenuOption = MenuOption.profile
     
     private var cornerRadius: CGFloat {
         
@@ -48,17 +45,17 @@ public struct ContentView: View
                 
                 if self.isShowing {
                     
-                    SideMenuView(options: self.menuOptions, isShowing: self.$isShowing)
+                    SideMenuView(options: self.menuOptions, isShowing: self.$isShowing) {
+                        
+                        option in
+                        
+                        print("Selected: \(option.title)")
+                        
+                        self.currentMenuOption = option
+                    }
                 }
                 
-                HomeView()
-                    .blur(radius: self.isShowing ? 5.0 : 0.0)
-                    .cornerRadius(self.cornerRadius)
-                    .offset(x: self.xOffset, y: self.yOffset)
-                    .scaleEffect(self.scaleEffect)
-                    .navigationTitle("Home")
-                    .toolbar(content: self.toolbarContent)
-                    .ignoresSafeArea()
+                self.mainView()
             }
         }
     }
@@ -66,6 +63,32 @@ public struct ContentView: View
 
 private extension ContentView
 {
+    @ViewBuilder
+    func mainView() -> some View
+    {
+        if self.currentMenuOption == .profile {
+            
+            HomeView()
+                .blur(radius: self.isShowing ? 5.0 : 0.0)
+                .cornerRadius(self.cornerRadius)
+                .offset(x: self.xOffset, y: self.yOffset)
+                .scaleEffect(self.scaleEffect)
+                .navigationTitle("Home")
+                .toolbar(content: self.toolbarContent)
+                .ignoresSafeArea()
+        }
+        
+        if self.currentMenuOption == .setting {
+            
+            GeometryReader {
+                
+                Color.sharkText
+                    .frame(width: $0.size.width, height: $0.size.height)
+                    .ignoresSafeArea()
+            }
+        }
+    }
+    
     func toolbarContent() -> some ToolbarContent
     {
         ToolbarItem(placement: .navigationBarLeading) {

@@ -16,10 +16,10 @@ public struct SideMenuView<Option>: View where Option: SideMenuOption
     
     private var options: Array<Option>
     
-    private var gradientColors: Array<Color> {
-        
-        [Color.sharkWhite, Color.sharkBlue]
-    }
+    private var onSelection: OnSelectionHandler
+    
+    @State
+    private var gradientColors: Array<Color> = [Color.sharkWhite, Color.sharkBlue]
     
     public var body: some View {
         
@@ -37,7 +37,7 @@ public struct SideMenuView<Option>: View where Option: SideMenuOption
                     
                     option in
                     
-                    SideMenuOptionView(option: option)
+                    SideMenuOptionView(option: option, onTap: self.onSelection)
                 }
                 
                 Spacer()
@@ -49,11 +49,22 @@ public struct SideMenuView<Option>: View where Option: SideMenuOption
     // MARK: - Methods -
     // MARK: Initial Method
     
-    public init(options: Array<Option>, isShowing: Binding<Bool>)
+    public init(options: Array<Option>, isShowing: Binding<Bool>, onSelection: @escaping OnSelectionHandler)
     {
         self.options = options
         self._isShowing = isShowing
+        self.onSelection = onSelection
     }
+    
+    public func gradient(_ gradientColors: Array<Color>)
+    {
+        self.gradientColors = gradientColors
+    }
+}
+
+public extension SideMenuView
+{
+    typealias OnSelectionHandler = SideMenuOptionView<Option>.OnTapHandler
 }
 
 struct SideMenuView_Previews: PreviewProvider
@@ -76,9 +87,11 @@ struct SideMenuView_Previews: PreviewProvider
     static var previews: some View {
         
         SideMenuView(options: self.options, isShowing: self.$isShowing)
+            { _ in }
             .preferredColorScheme(.light)
         
         SideMenuView(options: self.options, isShowing: self.$isShowing)
+            { _ in }
             .preferredColorScheme(.dark)
     }
 }
