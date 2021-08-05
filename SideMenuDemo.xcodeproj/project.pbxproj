@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F21A9ADF26BBB77C00177F9F /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */; };
 		F24AB60A26B90D0A0063F892 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AB60926B90D0A0063F892 /* SideMenuOption.swift */; };
 		F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AB60B26B9153B0063F892 /* MenuOption.swift */; };
 		F250C44B26BA6980009FF5F9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F250C44A26BA6980009FF5F9 /* ViewExtension.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		F24AB60926B90D0A0063F892 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
 		F24AB60B26B9153B0063F892 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		F250C44A26BA6980009FF5F9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				F288386226B390DD001EAEE3 /* ContentView.swift */,
 				F2FCC1D126B3CD890010E655 /* HomeView.swift */,
 				F2ED992D26BA7D6B00B0100A /* SettingView.swift */,
+				F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */,
 				F288386426B390DE001EAEE3 /* Assets.xcassets */,
 				F288386926B390DE001EAEE3 /* Info.plist */,
 				F288386626B390DE001EAEE3 /* Preview Content */,
@@ -222,6 +225,7 @@
 				F288387226B3914D001EAEE3 /* SideMenuView.swift in Sources */,
 				F2ED993526BA85CB00B0100A /* SideMenuModifier.swift in Sources */,
 				F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */,
+				F21A9ADF26BBB77C00177F9F /* CircleProgressView.swift in Sources */,
 				F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */,
 				F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */,
 				F288387526B39E55001EAEE3 /* SideMenuHeaderView.swift in Sources */,
