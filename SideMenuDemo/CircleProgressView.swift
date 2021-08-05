@@ -54,6 +54,14 @@ public struct CircleProgressView: View
         return progressView
     }
     
+    public func lineCap(_ lineCap: CGLineCap) -> CircleProgressView
+    {
+        var progressView: CircleProgressView = self
+        progressView.lineCap = lineCap
+        
+        return progressView
+    }
+    
     public func progressColor(forground: Color, background: Color = Color.white.opacity(0.1)) -> CircleProgressView
     {
         var progressView: CircleProgressView = self
