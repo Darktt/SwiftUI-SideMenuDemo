@@ -15,7 +15,7 @@ public struct ContentView: View
     private var menuOptions: Array<MenuOption> = MenuOption.all
     
     @State
-    private var currentMenuOption: MenuOption = MenuOption.profile
+    fileprivate var currentMenuOption: MenuOption = MenuOption.profile
     
     private var cornerRadius: CGFloat {
         
@@ -77,12 +77,19 @@ private extension ContentView
             
             HomeView()
                 .navigationTitle("Home")
+                .navigationBarTitleDisplayMode(.automatic)
         }
         
         if self.currentMenuOption == .setting {
             
-            SettingView()
-                .navigationTitle("Setting")
+            ScrollView(.vertical, showsIndicators: true) {
+                
+                SettingView()
+                    .navigationTitle("Setting")
+                    .navigationBarTitleDisplayMode(.inline)
+            }
+            .padding()
+            .background(Color.sharkBlue)
         }
     }
     
@@ -105,6 +112,15 @@ private extension ContentView
             self.isShowing.toggle()
         }
     }
+    
+    // For previews
+    func previewMainView(with option: MenuOption) -> ContentView
+    {
+        var contentView: ContentView = self
+        contentView._currentMenuOption = State(initialValue: option)
+        
+        return contentView
+    }
 }
 
 struct ContentView_Previews: PreviewProvider
@@ -112,5 +128,6 @@ struct ContentView_Previews: PreviewProvider
     static var previews: some View {
         
         ContentView()
+            .previewMainView(with: .setting)
     }
 }

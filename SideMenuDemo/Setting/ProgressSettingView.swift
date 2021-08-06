@@ -1,12 +1,13 @@
 //
-//  SettingView.swift
+//  ProgressSettingView.swift
+//  SideMenuDemo
 //
-//  Created by Darktt on 21/8/4.
+//  Created by Eden on 2021/8/6.
 //
 
 import SwiftUI
 
-public struct SettingView: View 
+public struct ProgressSettingView: View
 {
     @State
     private var progress: CGFloat = 0.25
@@ -30,14 +31,14 @@ public struct SettingView: View
                     .foregroundColor(.sharkBlue)
                     .frame(width: 200.0)
             }
-        }
+        }.navigationTitle("Progress Setting")
     }
 }
 
-struct SettingView_Previews: PreviewProvider 
+struct ProgressSettingView_Previews: PreviewProvider 
 {
     static var previews: some View {
         
-        SettingView()
+        ProgressSettingView()
     }
 }

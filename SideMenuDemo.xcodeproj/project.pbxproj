@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F2037E4526BCCAC2000B1D57 /* ProgressSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2037E4426BCCAC2000B1D57 /* ProgressSettingView.swift */; };
 		F21A9ADF26BBB77C00177F9F /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */; };
 		F24AB60A26B90D0A0063F892 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AB60926B90D0A0063F892 /* SideMenuOption.swift */; };
 		F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AB60B26B9153B0063F892 /* MenuOption.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F2037E4426BCCAC2000B1D57 /* ProgressSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSettingView.swift; sourceTree = "<group>"; };
 		F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		F24AB60926B90D0A0063F892 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
 		F24AB60B26B9153B0063F892 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
@@ -57,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F2037E4326BCCA1D000B1D57 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F2ED992D26BA7D6B00B0100A /* SettingView.swift */,
+				F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */,
+				F2037E4426BCCAC2000B1D57 /* ProgressSettingView.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		F250C44926BA4766009FF5F9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,8 +102,7 @@
 				F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */,
 				F288386226B390DD001EAEE3 /* ContentView.swift */,
 				F2FCC1D126B3CD890010E655 /* HomeView.swift */,
-				F2ED992D26BA7D6B00B0100A /* SettingView.swift */,
-				F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */,
+				F2037E4326BCCA1D000B1D57 /* Setting */,
 				F288386426B390DE001EAEE3 /* Assets.xcassets */,
 				F288386926B390DE001EAEE3 /* Info.plist */,
 				F288386626B390DE001EAEE3 /* Preview Content */,
@@ -228,6 +239,7 @@
 				F21A9ADF26BBB77C00177F9F /* CircleProgressView.swift in Sources */,
 				F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */,
 				F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */,
+				F2037E4526BCCAC2000B1D57 /* ProgressSettingView.swift in Sources */,
 				F288387526B39E55001EAEE3 /* SideMenuHeaderView.swift in Sources */,
 				F288386326B390DD001EAEE3 /* ContentView.swift in Sources */,
 				F250C44B26BA6980009FF5F9 /* ViewExtension.swift in Sources */,
