@@ -60,9 +60,6 @@ public struct ContentView: View
                 }
                 
                 self.mainView()
-                    .showingMenu(self.isShowing)
-                    .toolbar(content: self.toolbarContent)
-                    .ignoresSafeArea()
             }
         }
     }
@@ -77,19 +74,27 @@ private extension ContentView
             
             HomeView()
                 .navigationTitle("Home")
-                .navigationBarTitleDisplayMode(.automatic)
+                .showingMenu(self.isShowing)
+                .toolbar(content: self.toolbarContent)
+                .ignoresSafeArea()
         }
         
         if self.currentMenuOption == .setting {
             
-            ScrollView(.vertical, showsIndicators: true) {
+            ZStack {
                 
-                SettingView()
-                    .navigationTitle("Setting")
-                    .navigationBarTitleDisplayMode(.inline)
+                ScrollView(.vertical, showsIndicators: true) {
+                    
+                    SettingView()
+                        .navigationTitle("Setting")
+                }
+                .padding()
+                .background(Color.sharkBlue)
+                .navigationTitle("Setting")
+                .showingMenu(self.isShowing)
+                .toolbar(content: self.toolbarContent)
+                .ignoresSafeArea(edges: .bottom)
             }
-            .padding()
-            .background(Color.sharkBlue)
         }
     }
     
@@ -128,6 +133,7 @@ struct ContentView_Previews: PreviewProvider
     static var previews: some View {
         
         ContentView()
-            .previewMainView(with: .setting)
+//            .previewMainView(with: .profile)
+//            .previewMainView(with: .setting)
     }
 }

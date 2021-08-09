@@ -31,7 +31,9 @@ public struct ProgressSettingView: View
                     .foregroundColor(.sharkBlue)
                     .frame(width: 200.0)
             }
-        }.navigationTitle("Progress Setting")
+        }.navigationTitle("Progress")
+        .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea()
     }
 }
 
@@ -39,6 +41,9 @@ struct ProgressSettingView_Previews: PreviewProvider
 {
     static var previews: some View {
         
-        ProgressSettingView()
+        NavigationView {
+            
+            ProgressSettingView()
+        }
     }
 }

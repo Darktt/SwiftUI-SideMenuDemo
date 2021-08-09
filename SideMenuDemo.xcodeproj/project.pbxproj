@@ -12,6 +12,7 @@
 		F24AB60A26B90D0A0063F892 /* SideMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AB60926B90D0A0063F892 /* SideMenuOption.swift */; };
 		F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24AB60B26B9153B0063F892 /* MenuOption.swift */; };
 		F250C44B26BA6980009FF5F9 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F250C44A26BA6980009FF5F9 /* ViewExtension.swift */; };
+		F2571A4726C0CD9500843C77 /* AaaaaaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2571A4626C0CD9500843C77 /* AaaaaaView.swift */; };
 		F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */; };
 		F288386126B390DD001EAEE3 /* SideMenuDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */; };
 		F288386326B390DD001EAEE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288386226B390DD001EAEE3 /* ContentView.swift */; };
@@ -32,6 +33,7 @@
 		F24AB60926B90D0A0063F892 /* SideMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOption.swift; sourceTree = "<group>"; };
 		F24AB60B26B9153B0063F892 /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		F250C44A26BA6980009FF5F9 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		F2571A4626C0CD9500843C77 /* AaaaaaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AaaaaaView.swift; sourceTree = "<group>"; };
 		F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtenion.swift; sourceTree = "<group>"; };
 		F288385D26B390DD001EAEE3 /* SideMenuDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SideMenuDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuDemoApp.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				F2ED992D26BA7D6B00B0100A /* SettingView.swift */,
 				F21A9ADE26BBB77C00177F9F /* CircleProgressView.swift */,
 				F2037E4426BCCAC2000B1D57 /* ProgressSettingView.swift */,
+				F2571A4626C0CD9500843C77 /* AaaaaaView.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				F250C44B26BA6980009FF5F9 /* ViewExtension.swift in Sources */,
 				F24AB60A26B90D0A0063F892 /* SideMenuOption.swift in Sources */,
 				F2E113B426B3AB9C009DAA38 /* SideMenuOptionView.swift in Sources */,
+				F2571A4726C0CD9500843C77 /* AaaaaaView.swift in Sources */,
 				F2ED992E26BA7D6B00B0100A /* SettingView.swift in Sources */,
 				F288386126B390DD001EAEE3 /* SideMenuDemoApp.swift in Sources */,
 				F2E113B826B3AE2E009DAA38 /* Color.swift in Sources */,

@@ -12,38 +12,46 @@ public struct SettingView: View
     
     public var body: some View {
         
-        ZStack(alignment: .top) {
+        LazyVStack(alignment: .leading) {
             
-            Color.sharkBlue.ignoresSafeArea()
-            
-            LazyVStack(alignment: .leading) {
+            ForEach(self.settings) {
                 
-                ForEach(self.settings) {
+                item in
+                
+                HStack(spacing: 10.0) {
                     
-                    item in
+                    NavigationLink(destination: self.destinationView(with: item)) {
+                        
+                        Text(item.rawValue)
+                            .font(.system(size: 20.0, weight: .semibold))
+                            .foregroundColor(.sharkWhite)
+                            .padding(.leading, 10.0)
+                    }
                     
-                    HStack(spacing: 10.0) {
-                        
-                        Button(item.rawValue) {
-                            
-                            self.selectSetting(with: item)
-                        }.font(.system(size: 20.0, weight: .semibold))
-                        .foregroundColor(.sharkWhite)
-                        .padding(.leading, 10.0)
-                        
-                        Spacer()
-                    }.frame(height: 50.0)
-                }
-            }.padding(.top, 0.3)
-        }
+                    Spacer()
+                }.frame(height: 50.0)
+            }
+        }.padding(.top, 0.3)
     }
 }
 
 private extension SettingView
 {
-    func selectSetting(with item: SettingItem)
+    func destinationView(with item: SettingItem) -> AnyView
     {
+        var view = AnyView(Text("a"))
         
+        if item == .progress {
+            
+            view = AnyView(ProgressSettingView())
+        }
+        
+        if item == .a {
+            
+            view = AnyView(AaaaaaView())
+        }
+        
+        return view
     }
 }
 
@@ -60,11 +68,13 @@ struct SettingView_Previews: PreviewProvider
 private enum SettingItem: String
 {
     case progress = "Progress"
+    
+    case a = "a"
 }
 
 extension SettingItem
 {
-    static let all: Array<SettingItem> = [.progress]
+    static let all: Array<SettingItem> = [.progress, .a]
 }
 
 extension SettingItem: Identifiable
