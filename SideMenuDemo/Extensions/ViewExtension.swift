@@ -1,8 +1,7 @@
 //
 //  ViewExtension.swift
-//  SideMenuDemo
 //
-//  Created by Eden on 2021/8/4.
+//  Created by Darktt on 21/8/4.
 //
 
 import SwiftUI

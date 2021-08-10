@@ -1,0 +1,172 @@
+// Simultor
+"i386" = "32-bit Simulator";
+"x86_64" = "64-bit Simulator";
+
+// iPhone
+"iPhone1,1" = "iPhone"; // (1st generation)
+"iPhone1,2" = "iPhone 3G";
+"iPhone2,1" = "iPhone 3GS";
+"iPhone3,1" = "iPhone 4"; // (GSM)
+"iPhone3,1" = "iPhone 4"; // (GSM, 2nd revision)
+"iPhone3,3" = "iPhone 4"; // (Verizon)
+"iPhone4,1" = "iPhone 4S";
+"iPhone5,1" = "iPhone 5"; // (GSM)
+"iPhone5,2" = "iPhone 5"; // (GSM+CDMA)
+"iPhone5,3" = "iPhone 5C"; // (GSM)
+"iPhone5,4" = "iPhone 5C"; // (GSM+CDMA)
+"iPhone6,1" = "iPhone 5S"; // (GSM)
+"iPhone6,2" = "iPhone 5S"; // (GSM+CDMA)
+"iPhone7,1" = "iPhone 6 Plus";
+"iPhone7,2" = "iPhone 6";
+"iPhone8,1" = "iPhone 6S";
+"iPhone8,2" = "iPhone 6S Plus";
+"iPhone8,4" = "iPhone SE";
+"iPhone9,1" = "iPhone 7"; // (GSM+CDMA)
+"iPhone9,3" = "iPhone 7"; // (GSM)
+"iPhone9,2" = "iPhone 7 Plus"; // (GSM+CDMA)
+"iPhone9,4" = "iPhone 7 Plus"; // (GSM)
+"iPhone10,1" = "iPhone 8"; // (GSM+CDMA)
+"iPhone10,4" = "iPhone 8"; // (GSM)
+"iPhone10,2" = "iPhone 8 Plus"; // (GSM+CDMA)
+"iPhone10,5" = "iPhone 8 Plus"; // (GSM)
+"iPhone10,3" = "iPhone X"; // (GSM+CDMA)
+"iPhone10,6" = "iPhone X"; // (GSM)
+"iPhone11,1" = "iPhone XR"; // (GSM+CDMA)
+"iPhone11,2" = "iPhone XS"; // (GSM+CDMA)
+"iPhone11,3" = "iPhone XS"; //  (GSM)
+"iPhone11,4" = "iPhone XS Max"; // (GSM+CDMA)
+"iPhone11,5" = "iPhone XS Max"; // (GSM, Dual Sim, China)"
+"iPhone11,6" = "iPhone XS Max"; // (GSM)
+"iPhone11,8" = "iPhone XR"; // (GSM)"
+"iPhone12,1" = "iPhone 11";
+"iPhone12,3" = "iPhone 11 Pro";
+"iPhone13,1" = "iPhone 12 mini";
+"iPhone13,2" = "iPhone 12";
+"iPhone13,3" = "iPhone 12 Pro Max";
+"iPhone13,4" = "iPhone 12 Pro Max";
+
+// iPad 1
+"iPad1,1" = "iPad";
+//"iPad1,1" = "iPad Wifi + Cellular";
+
+// iPad 2
+"iPad2,1" = "iPad 2 Wifi";
+"iPad2,2" = "iPad 2 GSM";
+"iPad2,3" = "iPad 2 CDMA";
+"iPad2,4" = "iPad 2 Wifi";
+
+// iPad mini
+"iPad2,5" = "iPad mini Wifi";
+"iPad2,6" = "iPad mini Wifi + Cellular"; // (GSM)
+"iPad2,7" = "iPad mini Wifi + Cellular"; // (CDMA)
+
+// iPad 3
+"iPad3,1" = "iPad 3 Wifi";
+"iPad3,2" = "iPad 3 Wifi + Cellular"; // (GSM)
+"iPad3,3" = "iPad 3 Wifi + Cellular"; // (CDMA)
+
+// iPad 4
+"iPad3,4" = "iPad 4 Wifi";
+"iPad3,5" = "iPad 4 Wifi + Cellular"; // (GSM)
+"iPad3,6" = "iPad 4 Wifi + Cellular"; // (CDMA)
+
+// iPad AIR
+"iPad4,1" = "iPad AIR Wifi";
+"iPad4,2" = "iPad AIR Wifi + Cellular"; // (GSM)
+"iPad4,3" = "iPad AIR Wifi + Cellular"; // (CDMA)
+
+// iPad mini 2
+"iPad4,4" = "iPad mini 2 Wifi";
+"iPad4,5" = "iPad mini 2 Wifi + Cellular";
+"iPad4,6" = "iPad mini 2 Wifi + Cellular";
+
+// iPad mini 3
+"iPad4,7" = "iPad mini 3 Wifi";
+"iPad4,8" = "iPad mini 3 Wifi + Cellular";
+"iPad4,9" = "iPad mini 3 Wifi + Cellular";
+
+// iPad mini 4
+"iPad5,1" = "iPad mini 4 Wifi";
+"iPad5,2" = "iPad mini 4 Wifi + Cellular";
+
+// iPad AIR 2
+"iPad5,3" = "iPad AIR 2 Wifi";
+"iPad5,4" = "iPad AIR 2 Wifi + Cellular";
+
+// iPad Pro 9.7"
+"iPad6,3" = "iPad Pro 9.7\" Wifi";
+"iPad6,4" = "iPad Pro 9.7\" Wifi + Cellular";
+
+// iPad Pro 12.9"
+"iPad6,7" = "iPad Pro 12.9\" Wifi";
+"iPad6,8" = "iPad Pro 12.9\" Wifi + Cellular";
+
+// iPad 2017
+"iPad6,11" = "iPad Wifi";
+"iPad6,11" = "iPad Wifi + Cellular";
+
+// iPad Pro 12.9" 2017
+"iPad7,1" = "iPad Pro 12.9\" Wifi";
+"iPad7,2" = "iPad Pro 12.9\" Wifi + Cellular";
+
+// iPad Pro 10.5"
+"iPad7,3" = "iPad Pro 10.5\" Wifi";
+"iPad7,4" = "iPad Pro 10.5\" Wifi + Cellular";
+
+// iPad 2018
+"iPad7,5" = "iPad WiFi";
+"iPad7,6" = "iPad Wifi + Cellular";
+
+// iPad 10.5" 2019
+"iPad7,11" = "iPad 10.5\" Wifi";
+"iPad7,11" = "iPad 10.5\" WiFi + Cellular";
+
+
+// iPad Pro 11"
+"iPad8,1" = "iPad Pro 11\" WiFi";
+"iPad8,2" = "iPad Pro 11\" WiFi"; // 1TB storage.
+"iPad8,3" = "iPad Pro 11\" Wifi + Cellular";
+"iPad8,4" = "iPad Pro 11\" Wifi + Cellular"; // 1TB storage.
+
+// iPad Pro 12.9" 2018
+"iPad8,5" = "iPad Pro 12.9\" WiFi";
+"iPad8,6" = "iPad Pro 12.9\" WiFi"; // 1TB storage.
+"iPad8,7" = "iPad Pro 12.9\" Wifi + Cellular";
+"iPad8,8" = "iPad Pro 12.9\" Wifi + Cellular"; // 1TB storage.
+
+// iPad Pro 11" 2020
+"iPad8,9" = "iPad Pro 11\" WiFi";
+"iPad8,10" = "iPad Pro 11\" Wifi + Cellular";
+
+// iPad Pro 12.9" 2020
+"iPad8,11" = "iPad Pro 12.9\" WiFi";
+"iPad8,12" = "iPad Pro 12.9\" Wifi + Cellular";
+
+// iPad mini 5
+"iPad11,1" = "iPad mini 5 Wifi";
+"iPad11,2" = "iPad mini 5 Wifi + Cellular";
+
+// iPad AIR 3
+"iPad11,3" = "iPad AIR 3 WiFi";
+"iPad11,4" = "iPad AIR 3 Wifi + Cellular";
+
+// iPad 10.5" 2020
+"iPad11,6" = "iPad 10.5\" Wifi";
+"iPad11,7" = "iPad 10.5\" WiFi + Cellular";
+
+// iPad 2019
+"iPad12,1" = "iPad WiFi";
+"iPad12,1" = "iPad WiFi + Cellular";
+
+// iPad AIR 4
+"iPad13,1" = "iPad AIR 4 WiFi";
+"iPad13,2" = "iPad AIR 4 Wifi + Cellular";
+
+// iPod Touch
+"iPod1,1"   = "iPod Touch";
+"iPod2,1"   = "iPod Touch 2nd Gen";
+"iPod3,1"   = "iPod Touch 3rd Gen";
+"iPod4,1"   = "iPod Touch 4th Gen";
+"iPod5,1"   = "iPod Touch 5th Gen";
+"iPod7,1"   = "iPod Touch 6th Gen";
+"iPod9,1"   = "iPod Touch 7th Gen";

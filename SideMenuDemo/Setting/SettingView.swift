@@ -51,6 +51,11 @@ private extension SettingView
             view = AnyView(AaaaaaView())
         }
         
+        if item == .about {
+            
+            view = AnyView(AboutView())
+        }
+        
         return view
     }
 }
@@ -70,11 +75,13 @@ private enum SettingItem: String
     case progress = "Progress"
     
     case a = "a"
+    
+    case about = "About"
 }
 
 extension SettingItem
 {
-    static let all: Array<SettingItem> = [.progress, .a]
+    static let all: Array<SettingItem> = [.progress, .a, .about]
 }
 
 extension SettingItem: Identifiable
