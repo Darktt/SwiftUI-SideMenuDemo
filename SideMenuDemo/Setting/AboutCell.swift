@@ -72,14 +72,6 @@ public struct AboutCell: View
     }
 }
 
-extension String: Identifiable
-{
-    public var id: String {
-        
-        self
-    }
-}
-
 struct AboutCell_Previews: PreviewProvider
 {
     static var previews: some View {

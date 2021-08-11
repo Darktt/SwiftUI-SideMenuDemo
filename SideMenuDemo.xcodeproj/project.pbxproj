@@ -22,6 +22,7 @@
 		F288386826B390DE001EAEE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F288386726B390DE001EAEE3 /* Preview Assets.xcassets */; };
 		F288387226B3914D001EAEE3 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288387126B3914D001EAEE3 /* SideMenuView.swift */; };
 		F288387526B39E55001EAEE3 /* SideMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288387426B39E55001EAEE3 /* SideMenuHeaderView.swift */; };
+		F28EC97626C39C64004FFF0F /* IdentifiableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28EC97526C39C64004FFF0F /* IdentifiableExtension.swift */; };
 		F2C0B67326C113D800E5D606 /* DeviceName.strings in Resources */ = {isa = PBXBuildFile; fileRef = F2C0B67226C113D800E5D606 /* DeviceName.strings */; };
 		F2C0B67526C113F700E5D606 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0B67426C113F700E5D606 /* UIDeviceExtension.swift */; };
 		F2C0B67726C1163100E5D606 /* DTCarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0B67626C1163100E5D606 /* DTCarrierInfo.swift */; };
@@ -52,6 +53,7 @@
 		F288386926B390DE001EAEE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F288387126B3914D001EAEE3 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		F288387426B39E55001EAEE3 /* SideMenuHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeaderView.swift; sourceTree = "<group>"; };
+		F28EC97526C39C64004FFF0F /* IdentifiableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableExtension.swift; sourceTree = "<group>"; };
 		F2C0B67226C113D800E5D606 /* DeviceName.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = DeviceName.strings; sourceTree = "<group>"; };
 		F2C0B67426C113F700E5D606 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
 		F2C0B67626C1163100E5D606 /* DTCarrierInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTCarrierInfo.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */,
 				F250C44A26BA6980009FF5F9 /* ViewExtension.swift */,
 				F2C0B67426C113F700E5D606 /* UIDeviceExtension.swift */,
+				F28EC97526C39C64004FFF0F /* IdentifiableExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F288387226B3914D001EAEE3 /* SideMenuView.swift in Sources */,
+				F28EC97626C39C64004FFF0F /* IdentifiableExtension.swift in Sources */,
 				F2ED993526BA85CB00B0100A /* SideMenuModifier.swift in Sources */,
 				F2571A4926C0F59E00843C77 /* AboutView.swift in Sources */,
 				F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */,
