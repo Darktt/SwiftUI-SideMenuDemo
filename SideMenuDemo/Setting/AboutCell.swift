@@ -28,7 +28,7 @@ public struct AboutCell: View
             }
             
             Line(style: .double)
-                .lineWidth(1.0, color: .black)
+                .lineWidth(1.0, color: .sharkWhite)
             
             ForEach(self.details) {
                 
@@ -45,10 +45,13 @@ public struct AboutCell: View
             
             if self.details.isEmpty {
                 
-                Spacer()
-                
-                Text("Place holder")
-                    .foregroundColor(.clear)
+                HStack {
+                    
+                    Spacer()
+                    
+                    Text("Place holder")
+                        .foregroundColor(.clear)
+                }
             }
         }
     }
