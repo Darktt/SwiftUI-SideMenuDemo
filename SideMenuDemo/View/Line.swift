@@ -108,18 +108,6 @@ fileprivate extension LineStyle
     }
 }
 
-// MARK: - Private Extension -
-
-fileprivate extension CGPoint
-{
-    static let xInfinity: CGPoint = CGPoint.xInfinity(y: 0.0)
-    
-    static func xInfinity(y: CGFloat) -> CGPoint
-    {
-        CGPoint(x: CGFloat.infinity, y: y)
-    }
-}
-
 // MARK: - Preiview -
 
 struct Line_Previews: PreviewProvider 
