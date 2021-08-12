@@ -110,23 +110,16 @@ public final class DTReachability
     }
     
     private var reachability: SCNetworkReachability
+    private let serialQueue: DispatchQueue = DispatchQueue(label: "tw.com.darktt.personal.company", qos: .default, target: nil)
+    
     private var notifying: Bool = false
     
-    private var flags: SCNetworkReachabilityFlags {
+    private var flags: SCNetworkReachabilityFlags = [] {
         
-        var flags = SCNetworkReachabilityFlags(rawValue: 0)
-        
-        let gotFlags: Bool = withUnsafeMutablePointer(to: &flags, {
+        willSet {
             
-            SCNetworkReachabilityGetFlags(reachability, UnsafeMutablePointer($0))
-        })
-        
-        guard gotFlags else {
-            
-            return []
+            self.postReachabilityChange()
         }
-        
-        return flags
     }
     
     // MARK: - Methods -
@@ -134,9 +127,9 @@ public final class DTReachability
     
     public static func reachabilityForInternetConnection() -> DTReachability?
     {
-        var zeroAddress = sockaddr_in()
-        zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
-        zeroAddress.sin_family = sa_family_t(AF_INET)
+        var zeroAddress = sockaddr()
+        zeroAddress.sa_len = UInt8(MemoryLayout<sockaddr>.size)
+        zeroAddress.sa_family = sa_family_t(AF_INET)
         
         return DTReachability(hostAddress: zeroAddress)
     }
@@ -153,36 +146,16 @@ public final class DTReachability
         self.reachability = reachability
     }
     
-    public init?(hostAddress: sockaddr_in)
+    public init?(hostAddress: sockaddr)
     {
-        var address = hostAddress
+        var address: sockaddr = hostAddress
         
-        let _reachability: SCNetworkReachability? = withUnsafePointer(to: &address) {
-            
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
-            
-                SCNetworkReachabilityCreateWithAddress(nil, $0)
-            }
-        }
-        
-        guard let reachability = _reachability else {
+        guard let reachability = SCNetworkReachabilityCreateWithAddress(nil, &address) else {
             
             return nil
         }
         
         self.reachability = reachability
-    }
-    
-    public convenience init?(ipAddress: String, port: UInt16 = 80)
-    {
-        var address = sockaddr_in()
-        address.sin_len = UInt8(MemoryLayout.size(ofValue: address))
-        address.sin_family = sa_family_t(AF_INET);
-        address.sin_port = htons(port)
-        
-        inet_pton(AF_INET, ipAddress, &address.sin_addr)
-        
-        self.init(hostAddress: address)
     }
     
     deinit
@@ -199,35 +172,62 @@ public final class DTReachability
             return false
         }
         
-        var context = SCNetworkReachabilityContext()
-        context.info = Unmanaged.passUnretained(self).toOpaque()
-        
         let callBack: SCNetworkReachabilityCallBack = {
             
-            (_, flags, info) in
+            (_, _, info) in
             
             guard let info: UnsafeMutableRawPointer = info else {
                 
                 return
             }
             
-            let infoObject = Unmanaged<DTReachability>.fromOpaque(info).takeUnretainedValue()
-            
-            let notificationCenter = NotificationCenter.default
-            notificationCenter.post(name: DTReachability.reachabilityChangedNotification, object: infoObject)
-        }
-        
-        let success: Bool = SCNetworkReachabilitySetCallback(self.reachability, callBack, &context)
-        
-        if success {
-            
-            let scheduled: Bool = SCNetworkReachabilityScheduleWithRunLoop(self.reachability, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
-            
-            if scheduled {
+            DispatchQueue.main.async {
                 
-                self.notifying = true
+                let infoObject = Unmanaged<DTReachabilityWeakifier>.fromOpaque(info).takeUnretainedValue()
+                
+                let notificationCenter = NotificationCenter.default
+                notificationCenter.post(name: DTReachability.reachabilityChangedNotification, object: infoObject.reachability)
             }
         }
+        
+        let weakifiedReachability = DTReachabilityWeakifier(reachability: self)
+        let unsafeReachability: UnsafeMutableRawPointer = Unmanaged.passUnretained(weakifiedReachability).toOpaque()
+        
+        var context = SCNetworkReachabilityContext(version: 0, info: unsafeReachability,
+                                                   retain: {
+                                                    
+                                                    let unmanagedReachability = Unmanaged<DTReachabilityWeakifier>.fromOpaque($0)
+                                                    _ = unmanagedReachability.retain()
+                                                    
+                                                    return UnsafeRawPointer(unmanagedReachability.toOpaque())
+                                                },
+                                                   release: {
+                                                    
+                                                    let unmanagedReachability = Unmanaged<DTReachabilityWeakifier>.fromOpaque($0)
+                                                    unmanagedReachability.release()
+                                                },
+                                                   copyDescription: {
+                                                    
+                                                    let unmanagedReachability = Unmanaged<DTReachabilityWeakifier>.fromOpaque($0)
+                                                    let reachability: DTReachabilityWeakifier = unmanagedReachability.takeUnretainedValue()
+                                                    
+                                                    let description: String = reachability.reachability?.description ?? "nil"
+                                                    
+                                                    return Unmanaged.passRetained(description as CFString)
+                                                })
+        
+        if !SCNetworkReachabilitySetCallback(self.reachability, callBack, &context) {
+            
+            return false
+        }
+        
+        if !SCNetworkReachabilitySetDispatchQueue(self.reachability, self.serialQueue) {
+            
+            return false
+        }
+        
+        self.notifying = true
+        self.fetchReachabilityFlags()
         
         return self.notifying
     }
@@ -239,9 +239,47 @@ public final class DTReachability
             return
         }
         
-        SCNetworkReachabilityUnscheduleFromRunLoop(self.reachability, CFRunLoopGetCurrent(), CFRunLoopMode.defaultMode.rawValue)
+        SCNetworkReachabilitySetCallback(self.reachability, nil, nil)
+        SCNetworkReachabilitySetDispatchQueue(self.reachability, nil)
         
         notifying = false
+    }
+    
+    func fetchReachabilityFlags()
+    {
+        self.serialQueue.sync {
+            
+            var flags = SCNetworkReachabilityFlags()
+            
+            if SCNetworkReachabilityGetFlags(self.reachability, &flags) {
+                
+                self.flags = flags
+            }
+        }
+    }
+    
+    func postReachabilityChange()
+    {
+        DispatchQueue.main.async {
+            
+            [weak self] in
+            
+            guard let strongSelf = self else {
+                
+                return
+            }
+            
+            let notificationCenter = NotificationCenter.default
+            notificationCenter.post(name: DTReachability.reachabilityChangedNotification, object: strongSelf)
+        }
+    }
+}
+
+extension DTReachability: CustomStringConvertible
+{
+    public var description: String {
+        
+        self.currentReachabilityStatus.description
     }
 }
 
@@ -279,5 +317,52 @@ extension DTReachability.NetworkStatus : CustomStringConvertible
         }
         
         return description
+    }
+}
+
+// MARK: - DTReachabilityWeakifier -
+
+/**
+ `DTReachabilityWeakifier` weakly wraps the `Reachability` class
+ in order to break retain cycles when interacting with CoreFoundation.
+
+ CoreFoundation callbacks expect a pair of retain/release whenever an
+ opaque `info` parameter is provided. These callbacks exist to guard
+ against memory management race conditions when invoking the callbacks.
+
+ #### Race Condition
+
+ If we passed `SCNetworkReachabilitySetCallback` a direct reference to our
+ `Reachability` class without also providing corresponding retain/release
+ callbacks, then a race condition can lead to crashes when:
+ - `Reachability` is deallocated on thread X
+ - A `SCNetworkReachability` callback(s) is already in flight on thread Y
+
+ #### Retain Cycle
+
+ If we pass `Reachability` to CoreFoundtion while also providing retain/
+ release callbacks, we would create a retain cycle once CoreFoundation
+ retains our `Reachability` class. This fixes the crashes and his how
+ CoreFoundation expects the API to be used, but doesn't play nicely with
+ Swift/ARC. This cycle would only be broken after manually calling
+ `stopNotifier()` — `deinit` would never be called.
+
+ #### ReachabilityWeakifier
+
+ By providing both retain/release callbacks and wrapping `Reachability` in
+ a weak wrapper, we:
+ - interact correctly with CoreFoundation, thereby avoiding a crash.
+ See "Memory Management Programming Guide for Core Foundation".
+ - don't alter the public API of `Reachability.swift` in any way
+ - still allow for automatic stopping of the notifier on `deinit`.
+ */
+
+private class DTReachabilityWeakifier
+{
+    fileprivate weak var reachability: DTReachability?
+    
+    fileprivate init(reachability: DTReachability)
+    {
+        self.reachability = reachability
     }
 }
