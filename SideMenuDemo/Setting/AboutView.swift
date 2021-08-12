@@ -9,6 +9,7 @@ import SwiftUI
 
 public struct AboutView: View 
 {
+    @ObservedObject
     private var aboutDevice: AboutDevice = AboutDevice()
     
     public var body: some View {
@@ -27,6 +28,8 @@ public struct AboutView: View
                 }
             }
         }.background(Color.sharkBlue)
+        .navigationTitle("About")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -43,6 +46,11 @@ private extension AboutView
         if index == 1 {
             
             AboutCell(title: "Carrier", details: self.aboutDevice.carriers)
+        }
+        
+        if index == 2 {
+            
+            AboutCell(title: "Network", detail: self.aboutDevice.networkStatus.description)
         }
     }
 }

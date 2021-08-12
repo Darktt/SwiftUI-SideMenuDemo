@@ -37,23 +37,23 @@ public struct SettingView: View
 
 private extension SettingView
 {
-    func destinationView(with item: SettingItem) -> AnyView
+    func destinationView(with item: SettingItem) -> LazyView<AnyView>
     {
-        var view = AnyView(Text("a"))
+        var view = LazyView(AnyView(Text("a")))
         
         if item == .progress {
             
-            view = AnyView(ProgressSettingView())
+            view = LazyView(AnyView(ProgressSettingView()))
         }
         
         if item == .a {
             
-            view = AnyView(AaaaaaView())
+            view = LazyView(AnyView(AaaaaaView()))
         }
         
         if item == .about {
             
-            view = AnyView(AboutView())
+            view = LazyView(AnyView(AboutView()))
         }
         
         return view
