@@ -45,9 +45,9 @@ public extension DTReachability
     static var isConnected: Publisher<Void> {
         
         let publisher: Publisher = self.isReachable
-            .filter({ $0 })
-            .map({ _ in })
-            .eraseToAnyPublisher()
+                                        .filter({ $0 })
+                                        .map({ _ in })
+                                        .eraseToAnyPublisher()
         
         return publisher
     }
@@ -55,9 +55,9 @@ public extension DTReachability
     static var isDisconnected: Publisher<Void> {
         
         let publisher: Publisher = self.isReachable
-            .filter({ !$0 })
-            .map({ _ in })
-            .eraseToAnyPublisher()
+                                        .filter({ !$0 })
+                                        .map({ _ in })
+                                        .eraseToAnyPublisher()
         
         return publisher
     }
