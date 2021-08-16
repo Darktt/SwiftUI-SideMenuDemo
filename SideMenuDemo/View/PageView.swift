@@ -24,9 +24,9 @@ public struct PageView<Content>: View where Content: View
     // MARK: - Methods -
     // MARK: Initial Method
     
-    public init(style: PageTabViewStyle = .init(), @ViewBuilder content: @escaping ContentBuilder)
+    public init(displayMode: PageTabViewStyle.IndexDisplayMode = .automatic , @ViewBuilder content: @escaping ContentBuilder)
     {
-        self.style = style
+        self.style = PageTabViewStyle(indexDisplayMode: displayMode)
         self.contentBuilder = content
     }
 }
@@ -40,13 +40,11 @@ struct PageView_Previews: PreviewProvider
 {
     static var previews: some View {
         
-        PageView(style: PageTabViewStyle(indexDisplayMode: .always)) {
+        PageView(displayMode: .always) {
             
             ForEach(0 ... 3) {
                 
-                let ordinal = Ordinal(wrappedValue: $0 + 1)
-                
-                Text("\(ordinal.value) page.")
+                Text("\($0) page.")
             }
         }.background(Color.green)
         .ignoresSafeArea()

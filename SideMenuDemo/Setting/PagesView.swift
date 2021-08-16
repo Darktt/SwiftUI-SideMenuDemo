@@ -11,20 +11,23 @@ public struct PagesView: View
 {
     public var body: some View {
         
-        PageView(style: PageTabViewStyle(indexDisplayMode: .always)) {
+        PageView(displayMode: .always) {
             
             ForEach(0 ... 3) {
                 
                 pageIndex in
                 
-                VStack(alignment: .center) {
+                ZStack(alignment: .top) {
                     
-                    let ordinal = Ordinal(wrappedValue: pageIndex + 1)
+                    [Color.red, .blue, .orange, .accentColor][pageIndex].ignoresSafeArea()
                     
-                    Text("\(ordinal.value) page.")
-                        .padding()
-                    
-                    Spacer()
+                    VStack(alignment: .center) {
+                        
+                        Text("\(pageIndex) page.")
+                            .padding()
+                        
+                        Spacer()
+                    }
                 }
             }
         }.background(Color.green)
