@@ -26,9 +26,9 @@ public struct SettingView: View
                             .font(.system(size: 20.0, weight: .semibold))
                             .foregroundColor(.sharkWhite)
                             .padding(.leading, 10.0)
+                        
+                        Spacer()
                     }
-                    
-                    Spacer()
                 }.frame(height: 50.0)
             }
         }.padding(.top, 0.3)
@@ -56,6 +56,11 @@ private extension SettingView
             view = LazyView(AnyView(AboutView()))
         }
         
+        if item == .pages {
+            
+            view = LazyView(AnyView(PagesView()))
+        }
+        
         return view
     }
 }
@@ -77,11 +82,13 @@ private enum SettingItem: String
     case a = "a"
     
     case about = "About"
+    
+    case pages = "Pages"
 }
 
 extension SettingItem
 {
-    static let all: Array<SettingItem> = [.progress, .a, .about]
+    static let all: Array<SettingItem> = [.progress, .a, .about, .pages]
 }
 
 extension SettingItem: Identifiable

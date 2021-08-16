@@ -30,6 +30,7 @@ public struct AboutView: View
         }.background(Color.sharkBlue)
         .navigationTitle("About")
         .navigationBarTitleDisplayMode(.inline)
+        .ignoresSafeArea(edges: .bottom)
     }
 }
 

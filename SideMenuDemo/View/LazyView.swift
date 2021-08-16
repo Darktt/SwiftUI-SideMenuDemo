@@ -26,7 +26,7 @@ public struct LazyView<Content>: View where Content: View
         self.contentBuilder = builder
     }
     
-    public init(_ builder: @escaping () -> Content)
+    public init(@ViewBuilder _ builder: @escaping () -> Content)
     {
         self.contentBuilder = builder
     }
