@@ -68,6 +68,11 @@ private extension SettingView
             view = LazyView(EnlagedView(image: image).anyView)
         }
         
+        if item == .navigationMenu {
+            
+            view = LazyView(NavigationMenu().anyView)
+        }
+        
         return view
     }
 }
@@ -93,11 +98,13 @@ private enum SettingItem: String
     case pages = "Pages"
     
     case enlargeImage = "Enlarge Image"
+    
+    case navigationMenu = "Navigation Menu"
 }
 
 extension SettingItem
 {
-    static let all: Array<SettingItem> = [.progress, .a, .about, .pages, .enlargeImage]
+    static let all: Array<SettingItem> = [.progress, .a, .about, .pages, .enlargeImage, .navigationMenu]
 }
 
 extension SettingItem: Identifiable

@@ -35,6 +35,8 @@
 		F2C0B67726C1163100E5D606 /* DTCarrierInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0B67626C1163100E5D606 /* DTCarrierInfo.swift */; };
 		F2C0B67926C1218000E5D606 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0B67826C1218000E5D606 /* AboutCell.swift */; };
 		F2C0B67C26C123FC00E5D606 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C0B67B26C123FC00E5D606 /* Line.swift */; };
+		F2C300FA26CE293900AA6CAA /* NavigationMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C300F926CE293900AA6CAA /* NavigationMenu.swift */; };
+		F2C300FD26CE440100AA6CAA /* NavigationMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C300FC26CE440100AA6CAA /* NavigationMenuItem.swift */; };
 		F2C3368626CDF5E0004B127C /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3368526CDF5E0004B127C /* CGSizeExtension.swift */; };
 		F2E113B426B3AB9C009DAA38 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */; };
 		F2E113B826B3AE2E009DAA38 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E113B726B3AE2E009DAA38 /* Color.swift */; };
@@ -73,6 +75,8 @@
 		F2C0B67626C1163100E5D606 /* DTCarrierInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTCarrierInfo.swift; sourceTree = "<group>"; };
 		F2C0B67826C1218000E5D606 /* AboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		F2C0B67B26C123FC00E5D606 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		F2C300F926CE293900AA6CAA /* NavigationMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenu.swift; sourceTree = "<group>"; };
+		F2C300FC26CE440100AA6CAA /* NavigationMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuItem.swift; sourceTree = "<group>"; };
 		F2C3368526CDF5E0004B127C /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
 		F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
 		F2E113B726B3AE2E009DAA38 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				F2C0B67826C1218000E5D606 /* AboutCell.swift */,
 				F24ED1CA26CA30A0007F4BEC /* PagesView.swift */,
 				F205742E26CD054B003D4C99 /* EnlagedView.swift */,
+				F2C300F926CE293900AA6CAA /* NavigationMenu.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 				F2C0B67B26C123FC00E5D606 /* Line.swift */,
 				F25E97E726C4A82D006BB888 /* LazyView.swift */,
 				F25B9B1526C9ECF300948E78 /* PageView.swift */,
+				F2C300FC26CE440100AA6CAA /* NavigationMenuItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,11 +311,13 @@
 				F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */,
 				F21A9ADF26BBB77C00177F9F /* CircleProgressView.swift in Sources */,
 				F25E97E826C4A82D006BB888 /* LazyView.swift in Sources */,
+				F2C300FD26CE440100AA6CAA /* NavigationMenuItem.swift in Sources */,
 				F25B9B1626C9ECF300948E78 /* PageView.swift in Sources */,
 				F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */,
 				F24AB60C26B9153B0063F892 /* MenuOption.swift in Sources */,
 				F28EC97D26C3C73C004FFF0F /* DTReachability+Combine.swift in Sources */,
 				F2037E4526BCCAC2000B1D57 /* ProgressSettingView.swift in Sources */,
+				F2C300FA26CE293900AA6CAA /* NavigationMenu.swift in Sources */,
 				F2C3368626CDF5E0004B127C /* CGSizeExtension.swift in Sources */,
 				F288387526B39E55001EAEE3 /* SideMenuHeaderView.swift in Sources */,
 				F28EC97E26C3C73C004FFF0F /* DTReachability.swift in Sources */,
