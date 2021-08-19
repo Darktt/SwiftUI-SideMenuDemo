@@ -37,7 +37,7 @@ public struct PagesView: View
     }
 }
 
-struct PagesView_Previews: PreviewProvider 
+struct PagesView_Previews: PreviewProvider
 {
     static var previews: some View {
         

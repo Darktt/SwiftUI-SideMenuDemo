@@ -39,26 +39,31 @@ private extension SettingView
 {
     func destinationView(with item: SettingItem) -> LazyView<AnyView>
     {
-        var view = LazyView(AnyView(Text("a")))
+        var view = LazyView(Text("a").anyView)
         
         if item == .progress {
             
-            view = LazyView(AnyView(ProgressSettingView()))
+            view = LazyView(ProgressSettingView().anyView)
         }
         
         if item == .a {
             
-            view = LazyView(AnyView(AaaaaaView()))
+            view = LazyView(AaaaaaView().anyView)
         }
         
         if item == .about {
             
-            view = LazyView(AnyView(AboutView()))
+            view = LazyView(AboutView().anyView)
         }
         
         if item == .pages {
             
-            view = LazyView(AnyView(PagesView()))
+            view = LazyView(PagesView().anyView)
+        }
+        
+        if item == .enlargeImage {
+            
+            view = LazyView(EnlagedView().anyView)
         }
         
         return view
@@ -84,11 +89,13 @@ private enum SettingItem: String
     case about = "About"
     
     case pages = "Pages"
+    
+    case enlargeImage = "Enlarge Image"
 }
 
 extension SettingItem
 {
-    static let all: Array<SettingItem> = [.progress, .a, .about, .pages]
+    static let all: Array<SettingItem> = [.progress, .a, .about, .pages, .enlargeImage]
 }
 
 extension SettingItem: Identifiable

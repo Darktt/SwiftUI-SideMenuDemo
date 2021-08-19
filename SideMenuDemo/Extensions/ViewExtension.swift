@@ -8,6 +8,16 @@ import SwiftUI
 
 extension View
 {
+    // MARK: - Properties -
+    
+    var anyView: AnyView {
+        
+        AnyView(self)
+    }
+    
+    // MARK: - Methods -
+    // MARK: Initial Method
+    
     @ViewBuilder
     func linearGradient(colors: Array<Color>, startPoint: UnitPoint, endPoint: UnitPoint, ignoreSafeArea: Bool = false) -> some View
     {
