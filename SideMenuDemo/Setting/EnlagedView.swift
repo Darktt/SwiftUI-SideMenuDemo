@@ -10,46 +10,70 @@ import UIKit.UIImage
 
 public struct EnlagedView: View 
 {
-    private var image: UIImage = UIImage(named: "GawrGura")!
+    private let image: UIImage
     
     @State
     private var scale: CGFloat = 1.0
         
     @State
-    private var lastScaleValue: CGFloat = 1.0
+    private var lastScale: CGFloat = 1.0
     
     public var body: some View {
         
-        ScrollView([.vertical, .horizontal], showsIndicators: true) {
+        GeometryReader {
             
-            ZStack {
+            proxy in
+            
+            ScrollView([.vertical, .horizontal], showsIndicators: true) {
                 
-                Rectangle()
-                    .foregroundColor(.clear)
-                    .frame(width: self.image.size.width * self.scale, height: self.image.size.height * self.scale, alignment: .center)
-                
-                Image(uiImage: self.image)
-                    .scaleEffect(self.scale)
-                    .gesture(self.zoomGestrue())
+                ZStack(alignment: .center) {
+                    
+                    let imageSize: CGSize = self.image.size * self.scale
+                    
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: imageSize.width, height: imageSize.height, alignment: .center)
+                    
+                    Image(uiImage: self.image)
+                        .scaleEffect(self.scale)
+                        .gesture(self.zoomGestrue())
+                }
             }
         }
+    }
+    
+    public init(image: UIImage)
+    {
+        self.image = image
     }
 }
 
 private extension EnlagedView
 {
+    func imageSize(with viewSize: CGSize) -> CGSize
+    {
+        let imageSize: CGSize = viewSize.aspectRatio(with: self.image.size)
+        
+        return imageSize
+    }
+    
     func zoomGestrue() -> some Gesture
     {
         let onChange: (CGFloat) -> Void = {
             
-            _ in
+            let delta: CGFloat = $0 / self.lastScale
+            self.lastScale = $0
+            
+            let newScale: CGFloat = max(delta * self.scale, 1.0)
+            
+            self.scale = newScale
         }
         
         let onEnded: (CGFloat) -> Void = {
             
             _ in
             
-            self.lastScaleValue = 1.0
+            self.lastScale = 1.0
         }
         
         let gesture = MagnificationGesture()
@@ -64,6 +88,6 @@ struct EnlagedView_Previews: PreviewProvider
 {
     static var previews: some View {
         
-        EnlagedView()
+        EnlagedView(image: UIImage(named: "GawrGura")!)
     }
 }

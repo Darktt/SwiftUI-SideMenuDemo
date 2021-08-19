@@ -63,7 +63,9 @@ private extension SettingView
         
         if item == .enlargeImage {
             
-            view = LazyView(EnlagedView().anyView)
+            let image = UIImage(named: "GawrGura")!
+            
+            view = LazyView(EnlagedView(image: image).anyView)
         }
         
         return view
