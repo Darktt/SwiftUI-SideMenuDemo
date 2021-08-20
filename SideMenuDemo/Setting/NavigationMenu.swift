@@ -32,7 +32,8 @@ public struct NavigationMenu: View
                     NavigationMenuItem($0, selected: selected) {
                         
                         self.selectedItem = $0
-                    }.withMatchedGeometryEffect(id: "NavigationMenuItem", in: self.menuItemTransation, enabled: selected.wrappedValue)
+                    }
+                    .withMatchedGeometryEffect(id: "NavigationMenuItem", in: self.menuItemTransation, enabled: selected.wrappedValue)
                     
                     Spacer()
                 }

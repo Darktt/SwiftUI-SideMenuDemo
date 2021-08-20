@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct NavigationMenuItem: View
+public struct NavigationMenuItem<Title>: View where Title: StringProtocol
 {
     // MARK: - Properties -
     
@@ -29,12 +29,12 @@ public struct NavigationMenuItem: View
             }
     }
     
-    private let title: String
+    private let title: Title
     
     @Binding
     private var selected: Bool
     
-    private var onSelectedHandler: (String) -> Void
+    private var onSelectedHandler: OnSelectedHandler
     
     @ViewBuilder
     private var background: some View {
@@ -61,16 +61,13 @@ public struct NavigationMenuItem: View
     // MARK: - Methods -
     // MARK: Initial Method
     
-    public init(_ title: String, selected: Binding<Bool>, onSelected: @escaping (String) -> Void)
+    public init(_ title: Title, selected: Binding<Bool>, onSelected: @escaping OnSelectedHandler)
     {
         self.title = title
         self._selected = selected
         self.onSelectedHandler = onSelected
     }
-}
-
-public extension View
-{
+    
     @ViewBuilder
     func withMatchedGeometryEffect<ID>(id: ID, in namespace: Namespace.ID, enabled: Bool) -> some View where ID: Hashable
     {
@@ -82,4 +79,9 @@ public extension View
             self
         }
     }
+}
+
+public extension NavigationMenuItem
+{
+    typealias OnSelectedHandler = (Title) -> Void
 }
