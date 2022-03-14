@@ -9,6 +9,18 @@ import SwiftUI
 
 public struct HomeView: View
 {
+    @EnvironmentObject var orientationInfo: OrientationInfo
+    
+    var imageAlignment: Alignment {
+        
+        if self.orientationInfo.orientation == .landscape {
+            
+            return .top
+        }
+        
+        return .center
+    }
+    
     public var body: some View {
         
         ZStack {
@@ -16,7 +28,7 @@ public struct HomeView: View
             GeometryReader {
                 
                 Image("GawrGura")
-                    .frame(width: $0.size.width, height: $0.size.height)
+                    .frame(width: $0.size.width, height: $0.size.height, alignment: self.imageAlignment)
                     .clipped(antialiased: true)
             }
             .allowsHitTesting(false)

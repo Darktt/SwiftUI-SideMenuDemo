@@ -61,7 +61,7 @@ public struct ContentView: View
                 
                 self.mainView()
             }
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
@@ -73,6 +73,7 @@ private extension ContentView
         if self.currentMenuOption == .profile {
             
             HomeView()
+                .environmentObject(OrientationInfo())
                 .navigationTitle("Home")
                 .showingMenu(self.isShowing)
                 .toolbar(content: self.toolbarContent)
