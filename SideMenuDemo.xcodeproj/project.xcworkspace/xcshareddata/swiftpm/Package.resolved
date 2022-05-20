@@ -1,16 +1,14 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "DTPermissionKit",
-        "repositoryURL": "https://github.com/Darktt/DTPermissionKit",
-        "state": {
-          "branch": null,
-          "revision": "89e658295fc9cb76fc2cb70859715e691f5495d3",
-          "version": "0.0.2"
-        }
+  "pins" : [
+    {
+      "identity" : "dtpermissionkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Darktt/DTPermissionKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6f886e22fb2d4492bb749a2db4456ae2ef5a3b53"
       }
-    ]
-  },
-  "version": 1
+    }
+  ],
+  "version" : 2
 }

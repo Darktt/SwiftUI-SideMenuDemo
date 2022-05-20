@@ -20,8 +20,8 @@
 		F2571A4D26C1048D00843C77 /* AboutDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2571A4C26C1048D00843C77 /* AboutDevice.swift */; };
 		F25B9B1626C9ECF300948E78 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25B9B1526C9ECF300948E78 /* PageView.swift */; };
 		F25E97E826C4A82D006BB888 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25E97E726C4A82D006BB888 /* LazyView.swift */; };
-		F27471A126D875FB009780E5 /* DTPermissionKit in Frameworks */ = {isa = PBXBuildFile; productRef = F27471A026D875FB009780E5 /* DTPermissionKit */; };
 		F2751E9226B77EB100FB5BE8 /* IntExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */; };
+		F2783B7A283738F600433E25 /* DTPermissionKit in Frameworks */ = {isa = PBXBuildFile; productRef = F2783B79283738F600433E25 /* DTPermissionKit */; };
 		F288386126B390DD001EAEE3 /* SideMenuDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288386026B390DD001EAEE3 /* SideMenuDemoApp.swift */; };
 		F288386326B390DD001EAEE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F288386226B390DD001EAEE3 /* ContentView.swift */; };
 		F288386526B390DE001EAEE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F288386426B390DE001EAEE3 /* Assets.xcassets */; };
@@ -92,7 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F27471A126D875FB009780E5 /* DTPermissionKit in Frameworks */,
+				F2783B7A283738F600433E25 /* DTPermissionKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +248,7 @@
 			);
 			name = SideMenuDemo;
 			packageProductDependencies = (
-				F27471A026D875FB009780E5 /* DTPermissionKit */,
+				F2783B79283738F600433E25 /* DTPermissionKit */,
 			);
 			productName = SideMenuDemo;
 			productReference = F288385D26B390DD001EAEE3 /* SideMenuDemo.app */;
@@ -278,7 +278,7 @@
 			);
 			mainGroup = F288385426B390DD001EAEE3;
 			packageReferences = (
-				F274719F26D875FB009780E5 /* XCRemoteSwiftPackageReference "DTPermissionKit" */,
+				F2783B78283738F500433E25 /* XCRemoteSwiftPackageReference "DTPermissionKit" */,
 			);
 			productRefGroup = F288385E26B390DD001EAEE3 /* Products */;
 			projectDirPath = "";
@@ -469,7 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SideMenuDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = BBWXA3TC3S;
+				DEVELOPMENT_TEAM = Y5PE34DHT4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SideMenuDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -491,7 +491,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SideMenuDemo/Preview Content\"";
-				DEVELOPMENT_TEAM = BBWXA3TC3S;
+				DEVELOPMENT_TEAM = Y5PE34DHT4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SideMenuDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -530,20 +530,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F274719F26D875FB009780E5 /* XCRemoteSwiftPackageReference "DTPermissionKit" */ = {
+		F2783B78283738F500433E25 /* XCRemoteSwiftPackageReference "DTPermissionKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Darktt/DTPermissionKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.2;
+				branch = main;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F27471A026D875FB009780E5 /* DTPermissionKit */ = {
+		F2783B79283738F600433E25 /* DTPermissionKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F274719F26D875FB009780E5 /* XCRemoteSwiftPackageReference "DTPermissionKit" */;
+			package = F2783B78283738F500433E25 /* XCRemoteSwiftPackageReference "DTPermissionKit" */;
 			productName = DTPermissionKit;
 		};
 /* End XCSwiftPackageProductDependency section */
