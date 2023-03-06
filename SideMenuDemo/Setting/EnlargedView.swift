@@ -1,5 +1,5 @@
 //
-//  EnlagedView.swift
+//  EnlargedView.swift
 //  SideMenuDemo
 //
 //  Created by Eden on 2021/8/18.
@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit.UIImage
 
-public struct EnlagedView: View 
+public struct EnlargedView: View 
 {
     private let image: UIImage
     
@@ -36,7 +36,7 @@ public struct EnlagedView: View
                     
                     Image(uiImage: self.image)
                         .scaleEffect(self.scale)
-                        .gesture(self.zoomGestrue())
+                        .gesture(self.zoomGesture())
                 }
             }
         }
@@ -48,7 +48,7 @@ public struct EnlagedView: View
     }
 }
 
-private extension EnlagedView
+private extension EnlargedView
 {
     func imageSize(with viewSize: CGSize) -> CGSize
     {
@@ -57,7 +57,7 @@ private extension EnlagedView
         return imageSize
     }
     
-    func zoomGestrue() -> some Gesture
+    func zoomGesture() -> some Gesture
     {
         let onChange: (CGFloat) -> Void = {
             
@@ -84,10 +84,10 @@ private extension EnlagedView
     }
 }
 
-struct EnlagedView_Previews: PreviewProvider 
+struct EnlargedView_Previews: PreviewProvider 
 {
     static var previews: some View {
         
-        EnlagedView(image: UIImage(named: "GawrGura")!)
+        EnlargedView(image: UIImage(named: "GawrGura")!)
     }
 }

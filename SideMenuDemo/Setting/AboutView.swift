@@ -18,7 +18,7 @@ public struct AboutView: View
             
             LazyVStack {
                 
-                ForEach(0 ..< self.aboutDevice.count) {
+                ForEach(0 ..< self.aboutDevice.count, id: \.self) {
                     
                     index in
                     

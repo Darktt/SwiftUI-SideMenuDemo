@@ -15,7 +15,7 @@ public struct NavigationMenu: View
     private var selectedItem: String = "Objective-C"
     
     @Namespace
-    private var menuItemTransation: Namespace.ID
+    private var menuItemTranslation: Namespace.ID
     
     public var body: some View {
         
@@ -33,7 +33,7 @@ public struct NavigationMenu: View
                         
                         self.selectedItem = $0
                     }
-                    .withMatchedGeometryEffect(id: "NavigationMenuItem", in: self.menuItemTransation, enabled: selected.wrappedValue)
+                    .withMatchedGeometryEffect(id: "NavigationMenuItem", in: self.menuItemTranslation, enabled: selected.wrappedValue)
                     
                     Spacer()
                 }

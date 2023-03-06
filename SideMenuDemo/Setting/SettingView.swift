@@ -29,6 +29,7 @@ public struct SettingView: View
                         
                         Spacer()
                     }
+                    
                 }.frame(height: 50.0)
             }
         }.padding(.top, 0.3)
@@ -65,7 +66,7 @@ private extension SettingView
             
             let image = UIImage(named: "GawrGura")!
             
-            view = LazyView(EnlagedView(image: image).anyView)
+            view = LazyView(EnlargedView(image: image).anyView)
         }
         
         if item == .navigationMenu {
