@@ -41,13 +41,10 @@ public struct HomeView: View
     }
 }
 
-struct HomeView_Previews: PreviewProvider
-{
-    static var previews: some View {
+#Preview {
+    
+    NavigationView {
         
-        NavigationView {
-            
-            HomeView()
-        }
+        HomeView()
     }
 }

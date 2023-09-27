@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,7 +40,6 @@
 		F2C300FD26CE440100AA6CAA /* NavigationMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C300FC26CE440100AA6CAA /* NavigationMenuItem.swift */; };
 		F2C3368626CDF5E0004B127C /* CGSizeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C3368526CDF5E0004B127C /* CGSizeExtension.swift */; };
 		F2E113B426B3AB9C009DAA38 /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */; };
-		F2E113B826B3AE2E009DAA38 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2E113B726B3AE2E009DAA38 /* Color.swift */; };
 		F2ED992E26BA7D6B00B0100A /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED992D26BA7D6B00B0100A /* SettingView.swift */; };
 		F2ED993526BA85CB00B0100A /* SideMenuModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2ED993426BA85CB00B0100A /* SideMenuModifier.swift */; };
 		F2FCC1D226B3CD890010E655 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCC1D126B3CD890010E655 /* HomeView.swift */; };
@@ -81,7 +80,6 @@
 		F2C300FC26CE440100AA6CAA /* NavigationMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuItem.swift; sourceTree = "<group>"; };
 		F2C3368526CDF5E0004B127C /* CGSizeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGSizeExtension.swift; sourceTree = "<group>"; };
 		F2E113B326B3AB9C009DAA38 /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
-		F2E113B726B3AE2E009DAA38 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F2ED992D26BA7D6B00B0100A /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		F2ED993426BA85CB00B0100A /* SideMenuModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuModifier.swift; sourceTree = "<group>"; };
 		F2FCC1D126B3CD890010E655 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 			isa = PBXGroup;
 			children = (
 				F2C3368526CDF5E0004B127C /* CGSizeExtension.swift */,
-				F2E113B726B3AE2E009DAA38 /* Color.swift */,
 				F28EC97526C39C64004FFF0F /* IdentifiableExtension.swift */,
 				F2751E9126B77EB100FB5BE8 /* IntExtenion.swift */,
 				F2C0B67426C113F700E5D606 /* UIDeviceExtension.swift */,
@@ -338,7 +335,6 @@
 				F2ED992E26BA7D6B00B0100A /* SettingView.swift in Sources */,
 				F288386126B390DD001EAEE3 /* SideMenuDemoApp.swift in Sources */,
 				F205742F26CD054B003D4C99 /* EnlargedView.swift in Sources */,
-				F2E113B826B3AE2E009DAA38 /* Color.swift in Sources */,
 				F2C0B67926C1218000E5D606 /* AboutCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +462,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SideMenuDemo/Preview Content\"";
@@ -488,6 +485,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SideMenuDemo/Preview Content\"";
