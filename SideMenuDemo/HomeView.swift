@@ -27,7 +27,7 @@ public struct HomeView: View
             
             GeometryReader {
                 
-                Image("GawrGura")
+                Image(.gawrGura)
                     .frame(width: $0.size.width, height: $0.size.height, alignment: self.imageAlignment)
                     .clipped(antialiased: true)
             }
