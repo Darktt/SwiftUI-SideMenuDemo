@@ -134,7 +134,11 @@ struct ContentView_Previews: PreviewProvider
     static var previews: some View {
         
         ContentView()
-//            .previewMainView(with: .profile)
+            .previewMainView(with: .profile)
 //            .previewMainView(with: .setting)
+        
+        ContentView()
+            .previewMainView(with: .profile)
+            .preferredColorScheme(.dark)
     }
 }
